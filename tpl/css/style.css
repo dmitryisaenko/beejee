@@ -12,17 +12,29 @@
 }
 
 .table th.user_name{
-   width: 20%;
+   width: 25%;
 }
 .table th.user_email{
    width: 20%;
 }
 .table th.user_content{
-   width: 40%;
+   width: 35%;
 }
 .table th.user_status{
    width: 20%;
    text-align: center;
+}
+
+table span{
+   margin-left: 10px;
+}
+
+table span a{
+   margin: 0 5px;
+}
+
+i.fas{
+   color: white;
 }
 
 .task-done{

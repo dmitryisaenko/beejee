@@ -16,7 +16,7 @@
     }
     
     $c = '\\controllers\\';
-    $c .= isset($params[0]) ? $params[0] : 'Table';
+    $c .= isset($params[0]) ? $params[0] : 'table';
 
 	$action = isset($params[1]) ? $params[1] : 'action_start';
 

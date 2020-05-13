@@ -7,12 +7,19 @@ namespace controllers{
     class Table extends System{
         
         public function action_start(){
-            if (isset($_GET['sortby'])) {
-                $sortby = $_SESSION['sortby'] = ($_GET['sortby']);
-                $sort = $_SESSION['sort'] = ($_GET['sort']);
+            $data = array();
+            if (isset($_GET)) {
+                $getQuery = $this->secureData($_GET);
+            }
+            if (isset($getQuery['page'])){
+                $data['page'] = $getQuery['page'];
+            }
+            if (isset($getQuery['sortby'])) {
+                $sortby = $_SESSION['sortby'] = ($getQuery['sortby']);
+                $sort = $_SESSION['sort'] = ($getQuery['sort']);
                 $data['data'] = $this->db->select("SELECT * FROM main ORDER BY $sortby $sort");
             }
-            elseif ($_SESSION['sortby']){
+            elseif (isset($_SESSION['sortby'])){
                 $sortby = $_SESSION['sortby'];
                 $sort = $_SESSION['sort'];
                 $data['data'] = $this->db->select("SELECT * FROM main ORDER BY $sortby $sort");

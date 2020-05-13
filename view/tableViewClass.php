@@ -9,7 +9,16 @@ namespace view{
 			$arrayData = $this->data['data'];
 			$tableRowsCount = count($arrayData);
 			if ($tableRowsCount > 3) {
-				$pageNumber = (isset($_GET['page'])) ? $_GET['page'] : 1;
+				// $pageNumber = (isset($_GET['page'])) ? $_GET['page'] : 1;
+				if (isset($this->data['page'])){
+					$pageNumber = $this->data['page'];
+				}
+				elseif (isset($_GET['page'])){
+					$pageNumber = $_GET['page'];
+				}
+				else {
+					$pageNumber = 1;
+				}
 				$pagesCount = ceil($tableRowsCount/3);
 				if ( ($pageNumber > $pagesCount) || ($pageNumber == 1) ) {
 					$start = 0;
@@ -33,6 +42,7 @@ namespace view{
 
 			$sr['TABLE-ROWS'] = $tableRows;
 			$sr['PAGINATION'] = $this->getPagination($tableRowsCount);
+			$sr['PAGENUMBER'] = $pageNumber;
 			
 			return $this->getReplaceContent($sr, "tpl/table.tpl");
 		}

@@ -7,7 +7,6 @@ namespace view{
 		protected function newTask(){
 			$error = isset($this->data['error']) ? $this->data['error'] : '';
 			$userData = isset($this->data['userData']) ? $this->data['userData'] : '';
-			print_r($userData);
 			$sr['ERROR-EMPTY'] =  '';
 			$sr['ERROR-EMAIL'] = '';
 			if ($error == 'empty') $sr['ERROR-EMPTY'] = file_get_contents('tpl/error-empty.tpl');
