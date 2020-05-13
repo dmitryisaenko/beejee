@@ -1,0 +1,1 @@
+<li class="page-item"><a class="page-link %ACTIVE%" href="/?page=%PAGE-NUMBER%">%PAGE-NUMBER%</a></li>

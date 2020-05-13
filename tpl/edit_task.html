@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Добавить задачу</title>
+   
+</head>
+<body>
+   <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <div class="container">
+         <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html">Список задач</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" href="add_task.html">Новая задача</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="admin.html">Admin</a>
+               </li>
+            </ul>
+            <button type="button" class="btn btn-light mr-right" data-toggle="modal" data-target="#modal-login">Войти</button>
+         </div>
+      </div>
+   </nav>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-4 offset-1">
+            <h2 class="ml-3">Редактировать задачу</h2>
+            <form>
+               <div class="modal-body">
+                  <div class="form-group">
+                     <input class="form-control form-control-lg" type="text" placeholder="Имя" value="Иванов И.И.">
+                  </div>
+                  <div class="form-group">
+                     <input class="form-control form-control-lg" type="text" placeholder="Email" value="ivanov@gmail.com">
+                  </div>
+                  <div class="form-group">
+                     <textarea class="form-control form-control-lg" type="text" rows="5" placeholder="Задача">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, dolore sunt explicabo deleniti voluptas rem. Quia, sit totam iste perferendis voluptatem ipsam quas vel corrupti, expedita necessitatibus odio aliquam incidunt!</textarea>
+                  </div>
+                  <div class="form-group">
+                     <input id="checkbox_1" class="form-control-admin" checked type="checkbox" placeholder="Email" value="ivanov@gmail.com">
+                     <label for="checkbox_1">Выполнено</label>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="submit" class="btn btn-dark">Сохранить задачу</button>
+               </div>
+            </form>
+         </div>
+      </div>
+
+   </div>
+
+
+  
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   
+</body>
+</html>

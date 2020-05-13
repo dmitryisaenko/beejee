@@ -1,0 +1,89 @@
+#menu{
+   margin-bottom: 33px;
+}
+
+.nav-user-text{
+   color: white;
+   margin-right: 15px;
+}
+
+.table th.center{
+   
+}
+
+.table th.user_name{
+   width: 20%;
+}
+.table th.user_email{
+   width: 20%;
+}
+.table th.user_content{
+   width: 40%;
+}
+.table th.user_status{
+   width: 20%;
+   text-align: center;
+}
+
+.task-done{
+   color: green;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.task-editted{
+   color: red;
+   text-align: center;
+}
+
+.edit-btn{
+   display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+
+.form-control-admin{
+   width: 20px;
+    height: 20px;
+}
+
+.admin-text{
+   font-size: 10px;
+   text-align: center;
+   margin-top: 9px;
+}
+
+.admin-text span{
+   font-weight: bold;
+}
+
+#pagination .page-item{
+   margin: auto 3px;
+}
+
+#pagination .page-item:first-child,
+#pagination .page-item:last-child{
+   margin: auto 10px;
+}
+
+.modal-header{
+   border-bottom: none;
+}
+
+.modal-footer{
+   border-top: none;
+}
+
+#mes-edit{
+   /* position: fixed; */
+   /* top: 0;
+   left: 0;
+   width: 300px;
+   height: 100px; */
+}
+
+.page-link-active{
+   background-color: grey;
+    color: white;
+}
