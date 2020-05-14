@@ -34,7 +34,7 @@ namespace controllers{
             $view->showTemplate('showTable');
         }
 
-        //Method for change values in DB when admin click checkbox "Task done"
+        //Method for change values in DB when admin click checkbox "Task done" through AJAX
         public function post_ajax(){
             $data = $this->secureData($_POST);
             $task_id = (int)$data["checkbox_id"];
