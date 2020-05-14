@@ -13,6 +13,7 @@ namespace controllers{
             $view->showTemplate('newTask');
         }
         
+        //Method for save NEW task (for any users)
         public function saveNewTask(){
             $data['userData'] = $this->secureData($_POST);
             if ($this->validation($data['userData']) === true){
@@ -31,6 +32,7 @@ namespace controllers{
             }
         }
 
+        //Method show existing task (for admin only)
         public function showTask(){
             if (!$this->isAuth()) {
                 $_SESSION['message'] = 'noAuth';
@@ -46,6 +48,7 @@ namespace controllers{
             $view->showTemplate('editTask');
         }
 
+        //Method lets change existing task (for admin only)
         public function saveEditedTask(){
             if (!$this->isAuth()) {
                 $_SESSION['message'] = 'noAuth';
@@ -101,7 +104,8 @@ namespace controllers{
         }
 
         
-
+        //Validation inputed data - returns "Empty" if present one empty field. Then return "Email" if Email-field was inputed incorrect. 
+        //IF all OK - returns "true"
         private function validation($data){
             foreach ($data as $key => $value){
                 if ($value === '') return "empty";

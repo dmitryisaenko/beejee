@@ -6,6 +6,7 @@ namespace controllers{
 
     class Table extends System{
         
+        //Main method for project starting. Its prepeare data for table view
         public function action_start(){
             $data = array();
             if (isset($_GET)) {
@@ -33,6 +34,7 @@ namespace controllers{
             $view->showTemplate('showTable');
         }
 
+        //Method for change values in DB when admin click checkbox "Task done"
         public function post_ajax(){
             $data = $this->secureData($_POST);
             $task_id = (int)$data["checkbox_id"];

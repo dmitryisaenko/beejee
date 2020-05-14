@@ -5,11 +5,12 @@ namespace view{
 	class TableView extends View{
 
 		protected function showTable(){
-			$tableRows = '';
+			$tableRows = ''; 
 			$arrayData = $this->data['data'];
 			$tableRowsCount = count($arrayData);
+
+			//Prepare records from DB according current page:
 			if ($tableRowsCount > 3) {
-				// $pageNumber = (isset($_GET['page'])) ? $_GET['page'] : 1;
 				if (isset($this->data['page'])){
 					$pageNumber = $this->data['page'];
 				}
@@ -32,6 +33,7 @@ namespace view{
 				$end = $tableRowsCount;
 			}
 
+			//View records from DB according current page:
 			for ($n = $start; $n < $end; $n++){
 				$sr['USER-NAME'] = $arrayData[$n]['user_name'];
 				$sr['USER-EMAIL'] = $arrayData[$n]['user_email'];
@@ -47,6 +49,7 @@ namespace view{
 			return $this->getReplaceContent($sr, "tpl/table.tpl");
 		}
 		
+		//Pagination
 		protected function getPagination($tableRowsCount){
 			if ($tableRowsCount <= 3) return '';
 			$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
@@ -61,7 +64,8 @@ namespace view{
 			$sr['PAGES'] = $pages;
 			return $this->getReplaceContent($sr, "tpl/pagination.tpl");
 		}
-      
+		
+		//View last column in table according Auth/Noauth. For Auth show button "Edit" and checkbox "Done"
       protected function getTableCellStatus($dataTableRow){
 			if ($this->isAuth) {
 				$sr['ID'] = $dataTableRow['id'];

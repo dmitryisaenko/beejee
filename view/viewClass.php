@@ -57,7 +57,7 @@ namespace view{
 			}
 		}
 
-
+		//Show modal login-window with text erorr:
 		protected function showModal(){
 			if ( (isset($_SESSION['show-modal-login'])) && ($_SESSION['show-modal-login'] === true) )
 				{
@@ -69,6 +69,7 @@ namespace view{
 			}
 		}
 
+		//Show right part of menu according Auth/Noauth. For Auth show greeting and Logout-button. For Noauth - show only Login-button
 		protected function getMenuPart($action){
 			$fileName = '';
 			$sr['LIST-ACTIVE'] = '';
@@ -81,6 +82,7 @@ namespace view{
 			return $this->getReplaceContent($sr, 'tpl/menu.tpl');
 		}
 
+		//Show message if it present in Session
 		protected function getMessage(){
 			if ( (isset($_SESSION['message'])) && ($_SESSION['message'] !== '') ){
 				$message = $_SESSION['message'];
@@ -103,6 +105,7 @@ namespace view{
 
 		}
 
+		//Method for convert templates to viewable mode
 		protected function getReplaceContent($sr, $template) {
 			$content = file_get_contents($template);		
 			$search = array();
